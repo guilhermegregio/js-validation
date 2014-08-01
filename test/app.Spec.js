@@ -9,3 +9,4 @@ define(['src/app'], function (app) {
 	});
 
 });
+
