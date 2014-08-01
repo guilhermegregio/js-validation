@@ -1,0 +1,27 @@
+{
+  "name": "js-validation",
+  "version": "0.0.1",
+  "description": "Validation Object Data ",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "keywords": [
+    "validation"
+  ],
+  "author": "Guilherme M Gregio <guilherme@gregio.net>",
+  "license": "MIT",
+  "dependencies": {
+    "requirejs": "^2.1.14"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-karma": "^0.8.3",
+    "karma": "^0.12.19",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-requirejs": "^0.2.2",
+    "load-grunt-tasks": "^0.6.0",
+    "time-grunt": "^0.4.0"
+  }
+}
