@@ -43,7 +43,7 @@ define(['src/Validator'], function (Validator) {
 
 		var validator = new Validator(data, constrains);
 
-		it('should return validateResult', function(){
+		it('should return validateResult', function () {
 			var result = validator.validate();
 
 			expect(result.hasErrors()).toBeDefined();
@@ -51,7 +51,7 @@ define(['src/Validator'], function (Validator) {
 			expect(result.getError()).toBeDefined();
 		});
 
-		it('should return new instance of validateResult on validate()', function(){
+		it('should return new instance of validateResult on validate()', function () {
 			var resultA = validator.validate();
 			var resultB = validator.validate();
 

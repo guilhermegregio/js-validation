@@ -10,7 +10,7 @@ define([], function () {
 
 		var type = Object.prototype.toString.call(value).replace('[object ', '').replace(']', '').toLowerCase();
 
-		switch (type){
+		switch (type) {
 			case 'string':
 				return value !== '';
 				break;
