@@ -23,7 +23,6 @@ define(['src/ValidateResult'], function (ValidateResult) {
 		};
 
 		this.validate = function () {
-
 			return new ValidateResult();
 		};
 	};
