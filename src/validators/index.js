@@ -6,11 +6,13 @@
  * @author Guilherme Mangabeira Gregio <guilherme@gregio.net>
  */
 var imports = [
-	'src/validators/notEmpty'
+	'src/validators/notEmpty',
+	'src/validators/email'
 ];
 
-define(imports, function (notEmpty) {
+define(imports, function (notEmpty, email) {
 	return {
-		notEmpty: notEmpty
+		notEmpty: notEmpty,
+		email: email
 	}
 });
