@@ -64,7 +64,7 @@ define(['src/Validator', 'src/validators/index', 'src/util'], function (Validato
 
 		describe('validators', function () {
 			var data = {};
-			var constrains = ['notEmpty($name)', 'email($name)'];
+			var constrains = ['notEmpty($name)'];
 
 			var resultWithoutErrors = new Validator({}, []).validate();
 			var resultWithErrors = new Validator(data, constrains).validate();
