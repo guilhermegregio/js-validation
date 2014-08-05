@@ -89,6 +89,3 @@ define(['src/Validator', 'src/validators/index', 'src/util'], function (Validato
 
 	});
 });
-
-<span ng-if="result.for('name').getResultOf('required')">required</span>
-<span ng-if="result.getError('name')[1]">email</span>
