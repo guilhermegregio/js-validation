@@ -3,7 +3,7 @@
  * @name Validator
  * @author Guilherme Mangabeira Gregio <guilherme@gregio.net>
  */
-define(['src/ValidateResult'], function (ValidateResult) {
+define(['src/ValidateResult', 'src/validators/index', 'src/util'], function (ValidateResult, validators, util) {
 	var Validator = function (data, constrains) {
 		var _data = data;
 		var _constrains = constrains;
@@ -23,7 +23,36 @@ define(['src/ValidateResult'], function (ValidateResult) {
 		};
 
 		this.validate = function () {
-			return new ValidateResult();
+			var errors = execValidations(this.getData(), this.getConstrains());
+			return new ValidateResult(errors);
+		};
+
+		var execValidations = function (data, constrains) {
+			var errors = {};
+
+			constrains.forEach(function (constrainsExpression) {
+				var expressions = util.expressionToArray(constrainsExpression).reverse();
+
+				var validatorName = expressions.pop();
+
+				var values = [];
+				expressions.forEach(function(value){
+					if(/^\$/.test(value)) {
+						values.unshift(util.deep(data, value.replace('$', '')));
+					}
+				});
+
+				var validator = validators[validatorName];
+				var errorMsg = validator.errMessage;
+
+				if(!validator.apply(this, values)){
+					var path = expressions.pop().replace('$', '');
+					errors[path] = errors[path] || [];
+					errors[path].push(validatorName);
+				}
+			});
+
+			return errors;
 		};
 	};
 

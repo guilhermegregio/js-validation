@@ -3,12 +3,12 @@
  * @name validator.Spec
  * @author Guilherme Mangabeira Gregio <guilherme@gregio.net>
  */
-define(['src/Validator'], function (Validator) {
+define(['src/Validator', 'src/validators/index', 'src/util'], function (Validator, validators, util) {
 	describe('Validator Constructor', function () {
 		var data = [
 			{name: 'Guilherme M Gregio'}
 		];
-		var constrains = {};
+		var constrains = [];
 
 		it('should return error if not pass data', function () {
 			expect(function () {
@@ -39,7 +39,7 @@ define(['src/Validator'], function (Validator) {
 		var data = [
 			{name: 'Guilherme M Gregio'}
 		];
-		var constrains = {name: ['required']};
+		var constrains = [];
 
 		var validator = new Validator(data, constrains);
 
@@ -59,4 +59,36 @@ define(['src/Validator'], function (Validator) {
 		});
 
 	});
+
+	describe('expression', function () {
+
+		describe('validators', function () {
+			var data = {};
+			var constrains = ['notEmpty($name)', 'email($name)'];
+
+			var resultWithoutErrors = new Validator({}, []).validate();
+			var resultWithErrors = new Validator(data, constrains).validate();
+
+			it('should return boolean when execute hasErrors of resultValidate', function () {
+				expect(resultWithoutErrors.hasErrors()).toBe(false);
+				expect(resultWithErrors.hasErrors()).toBe(true);
+			});
+
+			it('should return errors', function () {
+				expect(resultWithErrors.getErrors()).toEqual({name: {notEmpty: 'name deve ser preenchido.'}});
+			});
+
+			it('should return error message of path', function () {
+
+
+				expect(resultWithErrors.getError('name')).toEqual({notEmpty: 'name deve ser preenchido.'});
+				expect(resultWithErrors.getError('name.notEmpty')).toBe('name deve ser preenchido.');
+			});
+		});
+
+
+	});
 });
+
+<span ng-if="result.for('name').getResultOf('required')">required</span>
+<span ng-if="result.getError('name')[1]">email</span>

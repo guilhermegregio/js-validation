@@ -3,20 +3,27 @@
  * @name ValidateResult
  * @author Guilherme Mangabeira Gregio <guilherme@gregio.net>
  */
-define([], function () {
+define(['src/util'], function (util) {
 
-	var ValidateResult = function () {
+	var ValidateResult = function (errors) {
+
+		//TODO(guilhermegregio): Change to copy safe for umutable
+		var _errors = errors;
 
 		this.hasErrors = function () {
-			return true;
+
+			return !util.isEmpty(this.getErrors());
 		};
 
 		this.getErrors = function () {
-			return [];
+			return _errors;
 		};
 
-		this.getError = function () {
-			return {};
+		this.getError = function (path) {
+			if(path === undefined){
+				return '';
+			}
+			return util.deep(this.getErrors(), path);
 		};
 
 	};
