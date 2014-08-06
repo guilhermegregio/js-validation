@@ -47,7 +47,7 @@ define(['src/Validator', 'src/validators/index', 'src/util'], function (Validato
 			var result = validator.validate();
 
 			expect(result.hasErrors()).toBeDefined();
-			expect(result.getErrors()).toBeDefined();
+			expect(result.getAllFailures()).toBeDefined();
 			expect(result.getError()).toBeDefined();
 		});
 
@@ -75,14 +75,19 @@ define(['src/Validator', 'src/validators/index', 'src/util'], function (Validato
 			});
 
 			it('should return errors', function () {
-				expect(resultWithErrors.getErrors()).toEqual({name: {notEmpty: 'name deve ser preenchido.'}});
+				var expectErrors = {
+					name: ['notEmpty']
+				};
+
+				expect(resultWithErrors.getAllFailures()).toEqual(expectErrors);
 			});
 
-			it('should return error message of path', function () {
+			it('should return array of invalids validations when given a field', function () {
+				expect(resultWithErrors.for('name').all()).toEqual(['notEmpty']);
+			});
 
-
-				expect(resultWithErrors.getError('name')).toEqual({notEmpty: 'name deve ser preenchido.'});
-				expect(resultWithErrors.getError('name.notEmpty')).toBe('name deve ser preenchido.');
+			it('should return boolean of invalid field validation notEmpty', function () {
+				expect(resultWithErrors.for('name').hasNotEmptyPassed()).toEqual(true);
 			});
 		});
 

@@ -3,7 +3,7 @@
  * @name ValidateResult
  * @author Guilherme Mangabeira Gregio <guilherme@gregio.net>
  */
-define(['src/util'], function (util) {
+define(['src/util', 'src/validators/index'], function (util, validators) {
 
 	var ValidateResult = function (errors) {
 
@@ -12,21 +12,42 @@ define(['src/util'], function (util) {
 
 		this.hasErrors = function () {
 
-			return !util.isEmpty(this.getErrors());
+			return !util.isEmpty(this.getAllFailures());
 		};
 
-		this.getErrors = function () {
+		this.getAllFailures = function () {
 			return _errors;
 		};
 
+		this.for = function (field) {
+			return new forApi(this.getAllFailures(), field);
+		};
+
 		this.getError = function (path) {
-			if(path === undefined){
+			if (path === undefined) {
 				return '';
 			}
 			return util.deep(this.getErrors(), path);
 		};
 
 	};
+
+	var forApi = function (errors, field) {
+		var self = this;
+
+		this.all = function () {
+			return errors[field];
+		};
+
+		Object.keys(validators).forEach(function (item) {
+			var name = item.replace(/(^.)/, function(char) { return char.toUpperCase(); });
+			var methodName = 'has{name}Passed'.replace('{name}', name);
+			self[methodName] = function () {
+				return errors[field].indexOf(item) !== -1;
+			};
+		});
+	};
+
 
 	return ValidateResult;
 });
