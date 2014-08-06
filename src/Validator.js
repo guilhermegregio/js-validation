@@ -36,8 +36,8 @@ define(['src/ValidateResult', 'src/validators/index', 'src/util'], function (Val
 				var validatorName = expressions.pop();
 
 				var values = [];
-				expressions.forEach(function(value){
-					if(/^\$/.test(value)) {
+				expressions.forEach(function (value) {
+					if (/^\$/.test(value)) {
 						values.unshift(util.deep(data, value.replace('$', '')));
 					}
 				});
@@ -45,7 +45,7 @@ define(['src/ValidateResult', 'src/validators/index', 'src/util'], function (Val
 				var validator = validators[validatorName];
 				var errorMsg = validator.errMessage;
 
-				if(!validator.apply(this, values)){
+				if (!validator.apply(this, values)) {
 					var path = expressions.pop().replace('$', '');
 					errors[path] = errors[path] || [];
 					errors[path].push(validatorName);
