@@ -3,7 +3,7 @@
  * @name ValidateResult
  * @author Guilherme Mangabeira Gregio <guilherme@gregio.net>
  */
-define(['src/util', 'src/validators/index'], function (util, validators) {
+define(['./util', './validators/index'], function (util, validators) {
 
 	var failuresApi = function (errors, field) {
 		var self = this;

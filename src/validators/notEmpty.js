@@ -5,7 +5,7 @@
  * @name validators/notEmpty
  * @author Guilherme Mangabeira Gregio <guilherme@gregio.net>
  */
-define([], function () {
+define(function () {
 	var notEmpty = function (value) {
 
 		var type = Object.prototype.toString.call(value).replace('[object ', '').replace(']', '').toLowerCase();

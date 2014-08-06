@@ -6,8 +6,8 @@
  * @author Guilherme Mangabeira Gregio <guilherme@gregio.net>
  */
 var imports = [
-	'src/validators/notEmpty',
-	'src/validators/email'
+	'./notEmpty',
+	'./email'
 ];
 
 define(imports, function (notEmpty, email) {
