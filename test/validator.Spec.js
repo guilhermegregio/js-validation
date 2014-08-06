@@ -91,6 +91,5 @@ define(['src/Validator', 'src/validators/index', 'src/util'], function (Validato
 			});
 		});
 
-
 	});
 });

@@ -96,7 +96,15 @@ define(['src/util'], function (util) {
 		it('should return boolean if object contains a key', function () {
 			expect(util.has({name: 'nome'}, 'name')).toBe(true);
 			expect(util.has({name: 'nome'}, 'teste')).toBe(false);
-		})
+		});
+
+		it('should clone object', function () {
+			var source = {a: 1, b: 'b', c: {test: true}};
+			var target = util.clone(source);
+
+			expect(target).toEqual(source);
+			expect(target).not.toBe(source);
+		});
 
 	});
 });
