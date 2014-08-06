@@ -8,14 +8,22 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		// Config Tasks
 		karma: {
+			options: {
+				configFile: 'karma.conf.js'
+			},
 			unit: {
-				configFile: 'karma.conf.js',
 				singleRun: true
+			},
+			watch: {
 			}
 		}
 	});
 
 	grunt.registerTask('test', [
 		'karma:unit'
+	]);
+
+	grunt.registerTask('test-w', [
+		'karma:watch'
 	]);
 };

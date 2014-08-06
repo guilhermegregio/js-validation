@@ -2,7 +2,7 @@
   "name": "js-validation",
   "version": "0.0.1",
   "description": "Validation Object Data ",
-  "main": "src/index.js",
+  "main": "src/Validator.js",
   "scripts": {
     "test": "grunt test"
   },
