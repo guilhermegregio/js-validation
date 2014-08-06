@@ -22,6 +22,7 @@
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-requirejs": "^0.2.2",
     "load-grunt-tasks": "^0.6.0",
+    "prompt": "^0.2.13",
     "time-grunt": "^0.4.0"
   }
 }

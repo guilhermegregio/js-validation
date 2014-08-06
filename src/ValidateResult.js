@@ -19,7 +19,7 @@ define(['./util', './validators/index'], function (util, validators) {
 
 			var methodName = 'has{name}Passed'.replace('{name}', name);
 			self[methodName] = function () {
-				return errors[field].indexOf(item) !== -1;
+				return (errors[field]||[]).indexOf(item) !== -1;
 			};
 		});
 	};
