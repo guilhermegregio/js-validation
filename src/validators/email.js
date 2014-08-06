@@ -12,7 +12,5 @@ define([], function () {
 		return isMail.test(value);
 	};
 
-	email.errMessage = ':field deve ser um e-mail valido.';
-
 	return email;
 });

@@ -43,7 +43,6 @@ define(['src/ValidateResult', 'src/validators/index', 'src/util'], function (Val
 				});
 
 				var validator = validators[validatorName];
-				var errorMsg = validator.errMessage;
 
 				if (!validator.apply(this, values)) {
 					var path = expressions.pop().replace('$', '');

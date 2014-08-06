@@ -37,7 +37,5 @@ define([], function () {
 		return false;
 	};
 
-	notEmpty.errMessage = ':field deve ser preenchido.';
-
 	return notEmpty;
 });

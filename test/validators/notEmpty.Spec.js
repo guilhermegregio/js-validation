@@ -22,10 +22,5 @@ define(['src/validators/notEmpty'], function (notEmpty) {
 			expect(notEmpty({nome: 'guilherme'})).toBe(true);
 			expect(notEmpty(1)).toBe(true);
 		});
-
-		it('should get message error when validate error', function () {
-			expect(notEmpty.errMessage).toBe(':field deve ser preenchido.');
-		});
-
 	});
 });

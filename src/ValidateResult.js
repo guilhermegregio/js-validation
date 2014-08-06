@@ -16,7 +16,7 @@ define(['src/util', 'src/validators/index'], function (util, validators) {
 			var name = item.replace(/(^.)/, function (char) {
 				return char.toUpperCase();
 			});
-			
+
 			var methodName = 'has{name}Passed'.replace('{name}', name);
 			self[methodName] = function () {
 				return errors[field].indexOf(item) !== -1;
