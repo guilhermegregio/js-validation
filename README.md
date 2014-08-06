@@ -9,7 +9,7 @@ Validation data object for back-end and front-end
 
 ### Use:
 
-```javascript
+```js
 var validator = new Validator(data, constrains);
 var result = validator.validate();
 result.hasErrors();
