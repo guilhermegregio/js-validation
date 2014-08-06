@@ -3,7 +3,7 @@
  * @name util
  * @author Guilherme Mangabeira Gregio <guilherme@gregio.net>
  */
-define([], function () {
+define(function () {
 	var util = {};
 
 	util.isArray = Array.isArray;
