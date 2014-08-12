@@ -71,7 +71,7 @@
         <repository>
             <id>dlbca</id>
             <name>releases</name>
-            <url>http://172.17.0.30:8080/labs/nexus/content/groups/public</url>
+            <url>http://ww1.dlbca.com.br/labs/nexus/content/groups/public</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
