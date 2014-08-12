@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Web JS-Validator</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/main.css"/>
+</head>
+<body>
+
+<div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand">JS Validation - Web Sample</h3>
+                    <ul class="nav masthead-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="inner cover">
+                <h1 class="cover-heading">Add Person</h1>
+
+                <form action="#" method="post">
+                    <label for="name">First Name:</label><br/>
+                    <input type="text" id="name"/><br/>
+                    <span class="requiredName" style="display: none;">Name required</span>
+                    <br/>
+
+                    <label for="email">E-mail:</label><br/>
+                    <input type="text" id="email"/><br/>
+                    <span class="invalidEmail" style="display: none;">E-mail invalid</span>
+                    <span class="requireEmail" style="display: none;">E-mail required</span>
+                    <br/>
+
+                    <input type="submit" value="send" class="btn btn-lg btn-default"/>
+                </form>
+
+                <pre class="validObj"></pre>
+
+            </div>
+
+            <div class="mastfoot">
+                <div class="inner">
+                    <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a
+                            href="https://twitter.com/mdo">@mdo</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script data-main="scripts/main" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
+</body>
+</html>
