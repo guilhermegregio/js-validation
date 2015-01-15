@@ -1,30 +1,23 @@
 {
-	"name": "js-validation",
-	"version": "0.0.1",
-	"description": "Validation Object Data ",
-	"main": "src/Validator.js",
-	"scripts": {
-		"test": "grunt test",
-		"build": "./node_modules/.bin/r.js -o build.js"
-	},
-	"keywords": [
-		"validation"
-	],
-	"author": "Guilherme M Gregio <guilherme@gregio.net>",
-	"license": "MIT",
-	"dependencies": {
-	},
-	"devDependencies": {
-		"grunt": "^0.4.5",
-		"grunt-browserify": "^2.1.4",
-		"grunt-contrib-uglify": "^0.5.1",
-		"grunt-karma": "^0.8.3",
-		"karma": "^0.12.19",
-		"karma-coverage": "^0.2.5",
-		"karma-jasmine": "^0.1.5",
-		"karma-phantomjs-launcher": "^0.1.4",
-		"load-grunt-tasks": "^0.6.0",
-		"prompt": "^0.2.13",
-		"time-grunt": "^0.4.0"
-	}
+    "name": "js-validation",
+    "version": "0.0.1",
+    "description": "Validation Object Data ",
+    "main": "src/Validator.js",
+    "scripts": {
+        "test": "./node_modules/karma/bin/karma start karma.conf.js --single-run",
+        "build": "./node_modules/.bin/r.js -o build.js"
+    },
+    "keywords": [
+        "validation"
+    ],
+    "author": "Guilherme M Gregio <guilherme@gregio.net>",
+    "license": "MIT",
+    "dependencies": {
+    },
+    "devDependencies": {
+        "karma": "^0.12.19",
+        "karma-coverage": "^0.2.5",
+        "karma-jasmine": "^0.1.5",
+        "karma-phantomjs-launcher": "^0.1.4"
+    }
 }
