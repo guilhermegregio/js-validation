@@ -30,7 +30,9 @@ define(['./ValidateResult', './validators', './util'], function (ValidateResult,
 		var execValidations = function (data, constrains) {
 			var errors = {};
 
-			constrains.forEach(function (constrainsExpression) {
+			for (var i = 0, length = constrains.length; i < length; i++) {
+				var constrainsExpression = constrains[i];
+
 				var expressions = util.expressionToArray(constrainsExpression).reverse();
 
 				var validatorName = expressions.pop();
@@ -49,7 +51,7 @@ define(['./ValidateResult', './validators', './util'], function (ValidateResult,
 					errors[path] = errors[path] || [];
 					errors[path].push(validatorName);
 				}
-			});
+			}
 
 			return errors;
 		};
