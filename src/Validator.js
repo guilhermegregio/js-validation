@@ -3,7 +3,7 @@
  * @name Validator
  * @author Guilherme Mangabeira Gregio <guilherme@gregio.net>
  */
-define(['./ValidateResult', './validators/index', './util'], function (ValidateResult, validators, util) {
+define(['./ValidateResult', './validators', './util'], function (ValidateResult, validators, util) {
 	var Validator = function (data, constrains) {
 		var _data = data;
 		var _constrains = constrains;

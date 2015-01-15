@@ -4,7 +4,8 @@
 	"description": "Validation Object Data ",
 	"main": "src/Validator.js",
 	"scripts": {
-		"test": "grunt test"
+		"test": "grunt test",
+		"build": "./node_modules/.bin/r.js -o build.js"
 	},
 	"keywords": [
 		"validation"

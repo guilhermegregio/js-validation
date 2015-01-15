@@ -79,7 +79,7 @@ define(function () {
 			return item;
 		} // null, undefined values check
 
-		var types = [ Number, String, Boolean ],
+		var types = [Number, String, Boolean],
 			result;
 
 		// normalizing primitives if someone did new String('aaa'), or new Number('444');
