@@ -1,23 +1,23 @@
 {
-    "name": "js-validation",
-    "version": "0.0.1",
-    "description": "Validation Object Data ",
-    "main": "src/Validator.js",
-    "scripts": {
-        "test": "./node_modules/karma/bin/karma start karma.conf.js --single-run",
-        "build": "./node_modules/.bin/r.js -o build.js"
-    },
-    "keywords": [
-        "validation"
-    ],
-    "author": "Guilherme M Gregio <guilherme@gregio.net>",
-    "license": "MIT",
-    "dependencies": {
-    },
-    "devDependencies": {
-        "karma": "^0.12.19",
-        "karma-coverage": "^0.2.5",
-        "karma-jasmine": "^0.1.5",
-        "karma-phantomjs-launcher": "^0.1.4"
-    }
+  "name": "js-validation",
+  "version": "0.0.1",
+  "description": "Validation Object Data ",
+  "main": "src/Validator.js",
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start karma.conf.js --single-run",
+    "build": "./node_modules/.bin/r.js -o build.js"
+  },
+  "keywords": [
+    "validation"
+  ],
+  "author": "Guilherme M Gregio <guilherme@gregio.net>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "karma": "^0.12.19",
+    "karma-coverage": "^0.2.5",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "requirejs": "^2.1.15"
+  }
 }
