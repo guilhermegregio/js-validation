@@ -30,15 +30,13 @@ define(['./ValidateResult', './validators', './util'], function (ValidateResult,
 		var execValidations = function (data, constrains) {
 			var errors = {};
 
-			for (var i = 0, length = constrains.length; i < length; i++) {
-				var constrainsExpression = constrains[i];
-
+			util.forEach(constrains, function (constrainsExpression) {
 				var expressions = util.expressionToArray(constrainsExpression).reverse();
 
 				var validatorName = expressions.pop();
 
 				var values = [];
-				expressions.forEach(function (value) {
+				util.forEach(expressions, function (value) {
 					if (/^\$/.test(value)) {
 						values.unshift(util.deep(data, value.replace('$', '')));
 					}
@@ -51,7 +49,7 @@ define(['./ValidateResult', './validators', './util'], function (ValidateResult,
 					errors[path] = errors[path] || [];
 					errors[path].push(validatorName);
 				}
-			}
+			});
 
 			return errors;
 		};

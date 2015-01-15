@@ -127,5 +127,17 @@ define(function () {
 		return result;
 	};
 
+	util.forEach = function (array, iteratee) {
+		var index = -1,
+			length = array.length;
+
+		while (++index < length) {
+			if (iteratee(array[index], index, array) === false) {
+				break;
+			}
+		}
+		return array;
+	};
+
 	return util;
 });

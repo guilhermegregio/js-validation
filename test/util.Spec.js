@@ -90,7 +90,11 @@ define(['src/util'], function (util) {
 
 		it('should return array when given expression', function () {
 			expect(util.expressionToArray('expression(person.name)')).toEqual(['expression', 'person.name']);
-			expect(util.expressionToArray('expression(path.one, path.two)')).toEqual(['expression', 'path.one', 'path.two']);
+			expect(util.expressionToArray('expression(path.one, path.two)')).toEqual([
+				'expression',
+				'path.one',
+				'path.two'
+			]);
 		});
 
 		it('should return boolean if object contains a key', function () {
@@ -104,6 +108,16 @@ define(['src/util'], function (util) {
 
 			expect(target).toEqual(source);
 			expect(target).not.toBe(source);
+		});
+
+		it('should forEach in array', function () {
+			var source = [1, 2, 3];
+			var target = [];
+			util.forEach(source, function (item) {
+				target.push(item);
+			});
+
+			expect(target).toEqual(source);
 		});
 
 	});
